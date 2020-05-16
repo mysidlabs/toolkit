@@ -1,0 +1,7 @@
+#! /bin/sh
+
+[[ -z "$1" ]] && echo -e "Must specify User Id\nSyntax: oc user siduserXX" && exit 1
+
+oc login https://api.ocp1.mysidlabs.com:6443 -u $1
+
+oc projects
