@@ -1,6 +1,6 @@
 FROM mysidlabs/toolkit-base
 
-LABEL maintainer=Steve Taranto <steve.taranto@siriuscom.com>
+LABEL maintainer="Steve Taranto <steve.taranto@siriuscom.com>"
 
 COPY files/root /
 
