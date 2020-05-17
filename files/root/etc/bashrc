@@ -1,7 +1,9 @@
-[[ ! -d ~/dev ]] && mkdir ~/dev && chmod o+w dev
-[[ ! -d ~/dev/ansible ]]              && git clone https://github.com/mysidlabs/ansible-labs ~/dev/ansible
-[[ ! -d ~/dev/k8s-demo ]]             && git clone https://github.com/mysidlabs/k8s-demo.git ~/dev/k8s-demo
-[[ ! -d ~/dev/cpuhog ]]               && git clone https://github.com/mysidlabs/cpuhog ~/dev/cpuhog
+[[ ! -d ~/dev ]] && mkdir ~/dev 
+[[ ! -d ~/dev/ansible ]]  && git clone https://github.com/mysidlabs/ansible-labs ~/dev/ansible
+[[ ! -d ~/dev/k8s-demo ]] && git clone https://github.com/mysidlabs/k8s-demo.git ~/dev/k8s-demo
+[[ ! -d ~/dev/cpuhog ]]   && git clone https://github.com/mysidlabs/cpuhog ~/dev/cpuhog
+
+cd ~
 
 alias kubectl=oc
 
