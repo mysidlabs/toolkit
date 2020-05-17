@@ -2,7 +2,7 @@
 name: Build and push to Docker Hub
 on:
   release:
-    types: [published]
+    types: [prereleased, released]
 jobs:
   build:
     runs-on: ubuntu-latest
