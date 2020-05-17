@@ -3,11 +3,9 @@ name: Build and push to Docker Hub
 on: [release]
 jobs:
   build:
-    name: Build and push 1
     runs-on: ubuntu-latest
     steps:
-      - name: Build and push 2
-        uses: docker/build-push-action@v1
+      - uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.docker_hub_id }}
           password: ${{ secrets.docker_hub_pw }}
