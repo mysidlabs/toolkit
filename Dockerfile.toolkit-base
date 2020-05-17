@@ -1,5 +1,7 @@
 FROM fedora
 
+LABEL maintainer=Steve Taranto <steve.taranto@siriuscom.com>
+
 RUN yum install -y ansible bat diffutils git iputils jq less nano python python-pip tree vim && yum clean all && \
     rm -f /root/*.cfg /root/*.log && \
     pip install boto boto3 && \
