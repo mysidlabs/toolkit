@@ -1,11 +1,15 @@
 ---
 name: Build and push to Docker Hub
 on: [release]
-uses: docker/build-push-action@v1
-with:
-  username: ${{ secrets.docker_hub_id }}
-  password: ${{ secrets.docker_hub_pw }}
-  repository: mysidlabs/toolkit
-  tag_with_ref: true
-  push: ${{ startsWith(github.ref, 'refs/tags/') }}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: docker/build-push-action@v1
+    - with:
+        username: ${{ secrets.docker_hub_id }}
+        password: ${{ secrets.docker_hub_pw }}
+        repository: mysidlabs/toolkit
+        tag_with_ref: true
+        push: ${{ startsWith(github.ref, 'refs/tags/') }}
 ...
