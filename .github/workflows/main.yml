@@ -11,5 +11,5 @@ jobs:
           password: ${{ secrets.docker_hub_pw }}
           repository: mysidlabs/toolkit
           tag_with_ref: true
-          push: ${{ startsWith(github.ref, 'refs/tags/') }}
+          # push: ${{ startsWith(github.ref, 'refs/tags/') }}
 ...
