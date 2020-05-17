@@ -1,4 +1,6 @@
 ---
+name: Build and push to Docker Hub
+on: [release]
 uses: docker/build-push-action@v1
 with:
   username: ${{ secrets.docker_hub_id }}
