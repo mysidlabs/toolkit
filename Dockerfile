@@ -1,18 +1,12 @@
-FROM fedora
+FROM mysidlabs/toolkit-base
 
-RUN yum install -y ansible bat diffutils emacs git iputils jq less nano python python-pip tree vim && yum clean all && \
-    rm -f /root/*.cfg /root/*.log
-RUN pip install boto boto3
+LABEL maintainer="Steve Taranto <steve.taranto@siriuscom.com>"
 
 COPY files/root /
 
-RUN groupadd --gid 4568 sidgroup && \
-    useradd -ms /bin/bash --uid 4567 --groups 4568 sid && \
-    chown -R sid:sid /home/sid
-COPY --chown=sid:sid files/home /home
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
-USER sid
-WORKDIR /home/sid
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
-ENV KUBECONFIG=~/.kube/config.sid
-
+CMD ["/bin/bash", "--login"]
