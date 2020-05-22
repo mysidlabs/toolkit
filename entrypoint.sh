@@ -6,12 +6,12 @@
 
 myid=${MYID:-9001}
 
-echo "Starting with UID: ${myid}"
-groupadd --gid ${myid} sidgroup
-useradd --shell /bin/bash --uid ${myid} --gid ${myid} --non-unique --no-create-home sid
+echo "Starting as ${SIDUSER} with UID: ${myid}"
+groupadd --gid ${myid} ${SIDUSER}
+useradd --shell /bin/bash --uid ${myid} --gid ${myid} --non-unique --no-create-home ${SIDUSER}
 
-[[ ! -d /home/sid ]] && mkdir /home/sid
-chown -R ${myid}:${myid} /home/sid
-export HOME=/home/sid
+[[ ! -d /home/${SIDUSER} ]] && mkdir /home/${SIDUSER}
+chown -R ${myid}:${myid} /home/${SIDUSER}
+export HOME=/home/${SIDUSER}
 
-exec /usr/local/bin/gosu sid "$@"
+exec /usr/local/bin/gosu ${SIDUSER} "$@"
