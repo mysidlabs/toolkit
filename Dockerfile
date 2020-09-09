@@ -5,7 +5,8 @@ LABEL maintainer="Steve Taranto <steve.taranto@siriuscom.com>"
 COPY files/root /
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh && \
+    pip install pan-python pandevice
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
