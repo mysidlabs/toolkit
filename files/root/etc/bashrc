@@ -1,5 +1,6 @@
 [[ ! -d ~/dev ]] && mkdir ~/dev 
 [[ ! -d ~/dev/ansible ]]  && git clone https://github.com/mysidlabs/ansible-labs ~/dev/ansible
+[[ ! -d ~/dev/aci ]]   && git clone https://github.com/mysidlabs/ansible-aci ~/dev/aci
 [[ ! -d ~/dev/k8s-demo ]] && git clone https://github.com/mysidlabs/k8s-demo.git ~/dev/k8s-demo
 [[ ! -d ~/dev/cpuhog ]]   && git clone https://github.com/mysidlabs/cpuhog ~/dev/cpuhog
 
